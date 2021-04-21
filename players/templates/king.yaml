@@ -1,0 +1,10 @@
+{{- if .Values.kong.enabled -}}
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: {{ include "players.fullname" . }}
+route:
+  preserve_host: false
+upstream:
+  host_header: players.bets.svc
+{{end}}
