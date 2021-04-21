@@ -6,5 +6,5 @@ metadata:
 route:
   preserve_host: false
 upstream:
-  host_header: players.bets.svc
+  host_header: {{ include "players.fullname" . }}.bets.svc
 {{end}}
