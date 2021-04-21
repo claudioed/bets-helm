@@ -25,6 +25,8 @@ serviceAccount:
 
 podAnnotations:
   linkerd.io/inject: enabled
+  ingress.kubernetes.io/service-upstream: "true"
+  nginx.ingress.kubernetes.io/service-upstream : "true"
 
 podSecurityContext: {}
   # fsGroup: 2000

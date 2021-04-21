@@ -23,7 +23,10 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
-podAnnotations: {}
+podAnnotations:
+  linkerd.io/inject: enabled
+  ingress.kubernetes.io/service-upstream: "true"
+  nginx.ingress.kubernetes.io/service-upstream : "true"
 
 podSecurityContext: {}
   # fsGroup: 2000
