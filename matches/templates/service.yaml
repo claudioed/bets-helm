@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "matches.fullname" . }}
+  annotations:
+    konghq.com/plugins: prometheus-matches
   labels:
     {{- include "matches.labels" . | nindent 4 }}
 spec:

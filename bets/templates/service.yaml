@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "bets.fullname" . }}
+  annotations:
+    konghq.com/plugins: prometheus-bets
   labels:
     {{- include "bets.labels" . | nindent 4 }}
 spec:

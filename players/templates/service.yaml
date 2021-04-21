@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "players.fullname" . }}
+  annotations:
+    konghq.com/plugins: prometheus-players
   labels:
     {{- include "players.labels" . | nindent 4 }}
 spec:

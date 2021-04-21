@@ -51,6 +51,7 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: "kong"
     konghq.com/override: bets-do-not-preserve-host
+    konghq.com/plugins: prometheus-bets
 
   hosts:
     - paths:
