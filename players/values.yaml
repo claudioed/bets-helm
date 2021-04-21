@@ -50,6 +50,7 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: "kong"
+    konghq.com/override: players-do-not-preserve-host
 
   hosts:
     - paths:
