@@ -1,0 +1,10 @@
+{{- if .Values.kong.enabled -}}
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: matches-do-not-preserve-host
+route:
+  preserve_host: false
+upstream:
+  host_header: {{ include "matches.fullname" . }}.bets.svc
+{{end}}

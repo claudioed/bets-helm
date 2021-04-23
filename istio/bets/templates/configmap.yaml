@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "bets.fullname" . }}
+data:
+  MATCH_SVC: "http://matches:9999/api/matches/6c51d4dd-e277-4282-9c51-871ba7fb16b3"
+  CHAMPIONSHIP_SVC: "http://championships:9999/api/championships/144954fe-b6c3-4a51-80d3-92911a06265c"
+  PLAYER_SVC: "http://players:9999/api/players/144954fe-b6c3-4a51-80d3-92911a06265c"

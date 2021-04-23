@@ -1,0 +1,10 @@
+{{- if .Values.kong.enabled -}}
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: championships-do-not-preserve-host
+route:
+  preserve_host: false
+upstream:
+  host_header: {{ include "championships.fullname" . }}.bets.svc
+{{end}}
