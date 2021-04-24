@@ -14,7 +14,7 @@ spec:
       name: primary
       route:
         - destination:
-            host: bets-stable
+            host: bets
             port:
               number: 9999
           weight: 100

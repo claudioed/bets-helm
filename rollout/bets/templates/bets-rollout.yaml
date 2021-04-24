@@ -35,7 +35,7 @@ spec:
   strategy:
     canary:
       canaryService: bets-canary
-      stableService: bets-stable
+      stableService: bets
       trafficRouting:
         istio:
           virtualService:
