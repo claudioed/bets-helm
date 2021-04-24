@@ -48,6 +48,8 @@ Selector labels
 {{- define "matches.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "matches.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+version: v1
+app: {{ include "matches.name" . }}
 {{- end }}
 
 {{/*

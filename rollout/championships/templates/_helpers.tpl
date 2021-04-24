@@ -48,6 +48,8 @@ Selector labels
 {{- define "championships.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "championships.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+version: v1
+app: {{ include "championships.name" . }}
 {{- end }}
 
 {{/*
