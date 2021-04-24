@@ -7,7 +7,7 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-  {{- include "bets.selectorLabels" . | nindent 4 }}
+  {{- include "bets.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
