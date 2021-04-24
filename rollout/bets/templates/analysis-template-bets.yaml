@@ -3,8 +3,6 @@ apiVersion: argoproj.io/v1alpha1
 metadata:
   name: {{ include "bets.fullname" . }}
 spec:
-  args:
-    - name: service-name
   metrics:
   - name: success-rate
     interval: 10s
@@ -15,4 +13,4 @@ spec:
       prometheus:
         address: http://prometheus.istio-system:9090
         query: |
-          sum(irate(istio_requests_total{reporter="source",destination_service=~"{{args.service-name}}",response_code=~"2.*"}[2m])) / sum(irate(istio_requests_total{reporter="source",destination_service=~"{{args.service-name}}"}[2m]))
+          sum(irate(istio_requests_total{reporter="source",destination_service=~"bets.istio.svc.cluster.local",response_code=~"2.*"}[2m])) / sum(irate(istio_requests_total{reporter="source",destination_service=~"bets.istio.svc.cluster.local"}[2m]))

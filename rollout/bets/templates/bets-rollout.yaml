@@ -56,6 +56,3 @@ spec:
         templates:
         - templateName: {{ include "bets.fullname" . }}
         startingStep: 2
-        args:
-        - name: service-name
-          value: bets.istio.svc.cluster.local
