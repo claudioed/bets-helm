@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: players-vs
+spec:
+  hosts:
+    - players
+  http:
+    - match:
+        - uri:
+            prefix: /api/players
+      route:
+        - destination:
+            host: players
+            port:
+              number: 9999
+            subset: v1
+          weight: 100

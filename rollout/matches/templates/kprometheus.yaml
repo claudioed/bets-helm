@@ -1,0 +1,7 @@
+{{- if .Values.kong.enabled -}}
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: prometheus-matches
+plugin: prometheus
+{{end}}
