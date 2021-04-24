@@ -11,10 +11,15 @@ spec:
     - match:
         - uri:
             prefix: /api/bets
+      name: primary
       route:
         - destination:
-            host: bets
+            host: bets-stable
             port:
               number: 9999
-            subset: v1
           weight: 100
+        - destination:
+            host: bets-canary
+            port:
+              number: 9999
+            weight: 0
