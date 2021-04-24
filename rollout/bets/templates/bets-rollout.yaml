@@ -5,7 +5,13 @@ metadata:
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+    {{- include "bets.selectorLabels" . | nindent 4 }}
   template:
+    metadata:
+      labels:
+      {{- include "bets.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}

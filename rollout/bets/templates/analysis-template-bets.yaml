@@ -4,7 +4,7 @@ metadata:
   name: {{ include "bets.fullname" . }}
 spec:
   args:
-  - name: service-name
+    - name: service-name
   metrics:
   - name: success-rate
     interval: 10s
