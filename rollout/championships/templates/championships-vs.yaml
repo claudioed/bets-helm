@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: championships-vs
+spec:
+  hosts:
+    - championships
+  http:
+    - match:
+        - uri:
+            prefix: /api/championships
+      route:
+        - destination:
+            host: championships
+            port:
+              number: 9999
+            subset: v1
+          weight: 100

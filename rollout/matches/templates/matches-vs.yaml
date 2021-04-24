@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: matches-vs
+spec:
+  hosts:
+    - matches
+  http:
+    - match:
+        - uri:
+            prefix: /api/matches
+      route:
+        - destination:
+            host: matches
+            port:
+              number: 9999
+            subset: v1
+          weight: 100
