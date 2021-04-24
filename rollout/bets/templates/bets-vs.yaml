@@ -22,4 +22,4 @@ spec:
             host: bets-canary
             port:
               number: 9999
-            weight: 0
+          weight: 0
