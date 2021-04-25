@@ -18,3 +18,8 @@ spec:
     automated:
       selfHeal: true
       prune: true
+  ignoreDifferences:
+    - group: networking.istio.io
+      kind: VirtualService
+      jsonPointers:
+        - /spec/http
