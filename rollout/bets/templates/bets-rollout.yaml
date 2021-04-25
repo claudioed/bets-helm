@@ -48,10 +48,10 @@ spec:
             duration: 2m
         - setWeight: 30
         - pause:
-            duration: 30s
+            duration: 60s
         - setWeight: 50
         - pause:
-            duration: 30s
+            duration: 60s
       analysis:
         templates:
         - templateName: {{ include "bets.fullname" . }}
