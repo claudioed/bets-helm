@@ -45,7 +45,7 @@ spec:
       steps:
         - setWeight: 10
         - pause:
-            duration: 3m
+            duration: 2m
         - setWeight: 30
         - pause:
             duration: 30s
@@ -54,5 +54,5 @@ spec:
             duration: 30s
       analysis:
         templates:
-          - templateName: {{ include "bets.fullname" . }}
+        - templateName: {{ include "bets.fullname" . }}
         startingStep: 2
