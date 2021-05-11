@@ -24,9 +24,7 @@ serviceAccount:
   name: ""
 
 podAnnotations:
-  linkerd.io/inject: enabled
-  ingress.kubernetes.io/service-upstream: "true"
-  nginx.ingress.kubernetes.io/service-upstream : "true"
+  sidecar.istio.io/inject : "true"
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -44,21 +42,18 @@ service:
   port: 9999
 
 kong:
-  enabled: true
+  enabled: false
 
 ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: "kong"
-    konghq.com/override: championships-do-not-preserve-host
+  enabled: false
 
-  hosts:
-    - paths:
-        - path: /api/championships
-          backend:
-            serviceName: championships
-            servicePort: 9999
-  tls: []
+#  hosts:
+#    - paths:
+#        - path: /api/championships
+#          backend:
+#            serviceName: championships
+#            servicePort: 9999
+#  tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
