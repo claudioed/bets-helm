@@ -27,7 +27,7 @@ spec:
             value: {{ .value }}
       forwardTo:
         {{- range .backends  }}
-        serviceName: {{ .serviceName }}
+      - serviceName: {{ .serviceName }}
         servicePort: {{ .port }}
       {{- end }}
       {{- end }}

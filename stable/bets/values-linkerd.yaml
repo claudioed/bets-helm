@@ -48,7 +48,7 @@ routes:
   enabled: true
   annotations: {}
   workload:
-    gateway: test
+    gateway: bets-gateway
   hosts:
     - bets.local
   rules:
