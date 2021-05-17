@@ -1,0 +1,35 @@
+{{- if .Values.routes.enabled -}}
+  {{- $fullName := include "bets.fullname" . -}}
+apiVersion: networking.x-k8s.io/v1alpha1
+kind: HTTPRoute
+metadata:
+  name: {{ $fullName }}
+  labels:
+  {{- include "bets.labels" . | nindent 4 }}
+  {{- with .Values.routes.workload }}
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.routes.annotations }}
+  annotations:
+  {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  hostnames:
+    {{- range .Values.routes.hosts }}
+    - {{ . | quote }}
+  {{- end }}
+  rules:
+    {{- range .Values.routes.rules }}
+    - matches:
+        {{- range .paths }}
+        - path:
+            type:  {{ .type }}
+            value: {{ .value }}
+      forwardTo:
+        {{- range .backends  }}
+        serviceName: {{ .serviceName }}
+        servicePort: {{ .port }}
+      {{- end }}
+      {{- end }}
+  {{- end }}
+  {{- end }}

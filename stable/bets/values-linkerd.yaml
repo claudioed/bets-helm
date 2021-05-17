@@ -44,6 +44,21 @@ service:
 kong:
   enabled: false
 
+routes:
+  enabled: true
+  annotations: {}
+  workload:
+    gateway: test
+  hosts:
+    - bets.local
+  rules:
+    - paths:
+      - type: Prefix
+        value: /api/bets
+        backends:
+          - serviceName: bets
+            port: 9999
+
 ingress:
   enabled: false
 
