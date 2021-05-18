@@ -50,7 +50,7 @@ routes:
   workload:
     gateway: bets-gateway
   gateways:
-    - gateway: bets-gateway
+    - gateway: contour
       namespace: projectcontour
 
   hosts:
