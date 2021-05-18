@@ -49,6 +49,10 @@ routes:
   annotations: {}
   workload:
     gateway: bets-gateway
+  gateways:
+    - gateway: bets-gateway
+      namespace: projectcontour
+
   hosts:
     - bets.local
   rules:

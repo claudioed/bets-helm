@@ -14,6 +14,13 @@ metadata:
   {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
+  gateways:
+    allow: FromList
+    gatewayRefs:
+      {{- range .Values.routes.gateways }}
+      -  name: {{ .gateway | quote }}
+         namespace: {{ .namespace | quote }}
+      {{- end }}
   hostnames:
     {{- range .Values.routes.hosts }}
     - {{ . | quote }}
