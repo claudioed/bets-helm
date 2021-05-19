@@ -59,14 +59,13 @@ ingress:
   #      - chart-example.local
 
 routes:
-  enabled: false
+  enabled: true
   annotations: {}
   workload:
     gateway: bets-gateway
   gateways:
-    - gateway: contour
-      namespace: projectcontour
-
+    - gateway: gateway
+      namespace: istio-system
   hosts:
     - bets.local
   rules:
