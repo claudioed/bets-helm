@@ -58,6 +58,25 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+routes:
+  enabled: false
+  annotations: {}
+  workload:
+    gateway: bets-gateway
+  gateways:
+    - gateway: contour
+      namespace: projectcontour
+
+  hosts:
+    - bets.local
+  rules:
+    - paths:
+        - type: Prefix
+          value: /api/bets
+          backends:
+            - serviceName: bets
+              port: 9999
+
 resources:
   limits:
     cpu: 20m
