@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/claudioed/bets-helm.git
     targetRevision: HEAD
   destination:
-    namespace: istio
+    namespace: bets
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
