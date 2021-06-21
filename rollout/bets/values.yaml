@@ -8,7 +8,7 @@ image:
   repository: claudioed/bets
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "7896bcc927546f7eac6907f34ea1094760ec7678"
 
 imagePullSecrets: []
 nameOverride: ""
