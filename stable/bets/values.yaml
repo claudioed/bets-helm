@@ -58,7 +58,7 @@ ingress:
   #      - chart-example.local
 
 routes:
-  enabled: true
+  enabled: false
   annotations: {}
   workload:
     gateway: bets-gateway
